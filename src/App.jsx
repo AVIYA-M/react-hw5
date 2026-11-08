@@ -1,7 +1,5 @@
 import Carousel from "./Carousel/Carousel"
-import { useState } from 'react'
 import './App.css'
-
 
 const images = [
   "/images/(1).jpg",
@@ -13,10 +11,7 @@ const images = [
 ];
 
 function App() {
- 
   return <Carousel images={images} intervalSeconds={3} />
-    
-  
 }
 
 export default App
