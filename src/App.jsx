@@ -1,4 +1,6 @@
-import Carousel from "./Carousel/Carousel"
+import { useState } from 'react'
+import Carousel from './Carousel/Carousel'
+import RecipesCarousel from './RecipesCarousel/RecipesCarousel'
 import './App.css'
 
 const images = [
@@ -11,7 +13,19 @@ const images = [
 ]
 
 function App() {
-  return <Carousel images={images} intervalSeconds={3} />
+  const [showRecipes, setShowRecipes] = useState(true)
+
+  return (
+    <>
+      <Carousel images={images} intervalSeconds={3} />
+
+      <button onClick={() => setShowRecipes((prev) => !prev)}>
+        {showRecipes ? 'Hide recipes' : 'Show recipes'}
+      </button>
+
+      {showRecipes && <RecipesCarousel />}
+    </>
+  )
 }
 
 export default App
