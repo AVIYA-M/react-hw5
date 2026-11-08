@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import './`Carousel.css'
+import './Carousel.css'
 
-function CarouselItem() {
-
+function CarouselItem({ src, alt }) {
   return (
-    <>
-      
-    </>
+    <div className="carousel-item">
+      <img src={src} alt={alt} />
+    </div>
   )
 }
 
