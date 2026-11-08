@@ -6,7 +6,7 @@ function Carousel({ images = [], intervalSeconds = 3 }) {
   const [selected, setSelected] = useState(0)
 
   const move = (step) => {
-    setSelected((prev) => prev + step)
+    setSelected((prev) => (prev + step + images.length) % images.length)
   }
 
   return (
